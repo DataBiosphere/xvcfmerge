@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+wid=$(docker ps -a --latest --filter "name=${XVCFMERGE_CONTAINER_NAME}" --format="{{.ID}}")
+if [[ -z $wid ]]; then
+    docker pull ${XVCFMERGE_IMAGE_NAME}
+    wid=$(docker run \
+          --mount type=bind,source=${XVCFMERGE_HOME}/mount,target=/home/${XVCFMERGE_USER}/mount \
+          --name ${XVCFMERGE_CONTAINER_NAME} \
+          -it -d \
+          ${XVCFMERGE_IMAGE_NAME})
+    echo "Started new container ${wid}"
+else
+    echo "Logging into existing container ${wid}"
+fi
+docker start ${wid} || echo
+docker exec -it $wid /bin/bash
