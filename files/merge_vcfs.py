@@ -8,7 +8,7 @@ from terra_notebook_utils import vcf, gs
 parser = argparse.ArgumentParser()
 parser.add_argument("bucket", type=str, help="")
 parser.add_argument("output_key", type=str, help="")
-parser.add_argument("input_keys", nargs='+', help="GS bucket locations of '.vcf.gz' files.")
+parser.add_argument("input_keys", help="GS bucket locations of '.vcf.gz' files.")
 args = parser.parse_args()
 
 client = gs.get_client()
@@ -16,9 +16,9 @@ client = gs.get_client()
 bucket = client.bucket(args.bucket)
 
 blobs = list()
-for key in args.input_keys:
+for key in args.input_keys.split(","):
     blob = bucket.get_blob(key)
-    print(blob.size)
+    print("vcf.gz size:", blob.size)
     blobs.append(blob)
 
 vcf.combine(blobs, bucket.name, args.output_key)
