@@ -3,9 +3,7 @@ include common.mk
 all: image
 
 image:
-	docker build -f ${XVCFMERGE_HOME}/Dockerfile \
-	--build-arg XVCFMERGE_USER \
-	-t $(XVCFMERGE_IMAGE_NAME) .
+	docker build -f ${XVCFMERGE_HOME}/Dockerfile --build-arg XVCFMERGE_USER -t $(XVCFMERGE_IMAGE_NAME) .
 
 publish: image
 	docker push $(XVCFMERGE_IMAGE_NAME)
