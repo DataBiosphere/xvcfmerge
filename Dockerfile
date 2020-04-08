@@ -62,5 +62,3 @@ RUN bash -c "echo '${XVCFMERGE_USER} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 USER ${XVCFMERGE_USER}
 WORKDIR /home/${XVCFMERGE_USER}
 ENV PATH /home/${XVCFMERGE_USER}/bin:${PATH}
-
-COPY files/merge_vcfs.py /home/${XVCFMERGE_USER}

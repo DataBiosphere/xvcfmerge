@@ -12,6 +12,6 @@ task xVCFMerge {
 		cpu: "8"
 	}
 	command {
-		python3 /home/xvcfmerge/merge_vcfs.py ${bucket} ${output_key} ${input_keys}
+		merge_vcfs.py ${bucket} ${output_key} ${input_keys}
 	}
 }
