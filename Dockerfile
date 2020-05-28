@@ -45,15 +45,8 @@ ENV LC_ALL C.UTF-8
 # gcloud
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && apt-get update -y && apt-get install google-cloud-sdk -y
 
-# build bcftools
-RUN git clone -b xbrianh-readers-idx https://github.com/xbrianh/htslib.git
-RUN git clone -b xbrianh-omit-index https://github.com/xbrianh/bcftools.git
-RUN (cd bcftools && make)
-RUN (cd bcftools && make install)
-
-# terra-notebook-utils
-RUN pip3 install wheel
-RUN pip3 install --upgrade --no-cache-dir git+https://github.com/DataBiosphere/terra-notebook-utils.git@xbrianh-vcf-samtools
+# xsamtools (includes htslib and bcftools)
+RUN pip3 install xsamtools
 
 # Create a user
 ARG XVCFMERGE_USER
