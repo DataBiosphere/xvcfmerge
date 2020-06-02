@@ -6,7 +6,7 @@ task xVCFMerge {
 	String input_files
 	String output_file
 	runtime {
-	    docker: "xbrianh/xvcfmerge"
+	    docker: "xbrianh/xvcf"
 		memory: "64G"
 		cpu: "8"
 	}

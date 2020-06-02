@@ -5,6 +5,6 @@ export XVCFMERGE_HOME="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
 set -a
 XVCFMERGE_USER="xvcfmerge"
-XVCFMERGE_IMAGE_NAME="xbrianh/xvcfmerge"
-XVCFMERGE_CONTAINER_NAME="xvcfmerge"
+XVCFMERGE_IMAGE_NAME="xbrianh/xvcf"
+XVCFMERGE_CONTAINER_NAME="xvcf"
 set +a
