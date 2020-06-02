@@ -12,6 +12,6 @@ task xVCFMerge {
 		cpu: "8"
 	}
 	command {
-		merge_vcfs.py ${bucket} ${output_key} ${input_keys}
+		xsamtools vcf merge --inputs ${input_keys} --output ${output_key}
 	}
 }
