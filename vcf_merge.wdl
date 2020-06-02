@@ -3,15 +3,14 @@ workflow xVCFMergeWorkflow {
 }
 
 task xVCFMerge {
-	String bucket
-	String output_key
-	String input_keys
+	String inputs
+	String output
 	runtime {
 	    docker: "xbrianh/xvcfmerge"
 		memory: "64G"
 		cpu: "8"
 	}
 	command {
-		xsamtools vcf merge --inputs ${input_keys} --output ${output_key}
+		xsamtools vcf merge --inputs ${inputs} --output ${output}
 	}
 }
