@@ -3,14 +3,18 @@ workflow xVCFMergeWorkflow {
 }
 
 task xVCFMerge {
-	String input_files
+	Array[String] input_files
 	String output_file
+	String billing_project
+	String workspace
 	runtime {
 	    docker: "xbrianh/xsamtools:v0.5.0"
 		memory: "64G"
 		cpu: "8"
 	}
 	command {
-		xsamtools vcf merge --inputs ${input_files} --output ${output_file}
+		export GOOGLE_PROJECT=${billing_project}
+		export WORKSPACE_NAME=${workspace}
+		xsamtools vcf merge --inputs ${sep="," input_files} --output ${output_file}
 	}
 }

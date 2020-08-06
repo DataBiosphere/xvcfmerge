@@ -1,4 +1,6 @@
 {
+  "xVCFMergeWorkflow.xVCFMerge.workspace": "terra-notebook-utils-tests",
+  "xVCFMergeWorkflow.xVCFMerge.billing_project": "firecloud-cgl",
   "xVCFMergeWorkflow.xVCFMerge.input_files": [
     "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/my.vcf.gzconsent1/HVH_phs000993_TOPMed_WGS_freeze.8.chr7.hg38.vcf.gz",
     "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/my.vcf.gzphg001280.v1.TOPMed_WGS_Amish_v4.genotype-calls-vcf.WGS_markerset_grc38.c2.HMB-IRB-MDS/Amish_phs000956_TOPMed_WGS_freeze.8.chr7.hg38.vcf.gz"
