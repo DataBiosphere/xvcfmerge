@@ -6,7 +6,7 @@ task xVCFMerge {
 	String input_files
 	String output_file
 	runtime {
-	    docker: "xbrianh/xsamtools"
+	    docker: "xbrianh/xsamtools:v0.4.1"
 		memory: "64G"
 		cpu: "8"
 	}
