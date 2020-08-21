@@ -7,10 +7,12 @@ task xVCFMerge {
 	String output_file
 	String billing_project
 	String workspace
+	Int? preemptible = 0
 	runtime {
 	    docker: "xbrianh/xsamtools:v0.5.0"
 		memory: "64G"
 		cpu: "8"
+		preemptible: "${preemptible}"
 	}
 	command {
 		export GOOGLE_PROJECT=${billing_project}
