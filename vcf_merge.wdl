@@ -9,7 +9,7 @@ task xVCFMerge {
 	String workspace
 	Int? preemptible = 0
 	runtime {
-	    docker: "xbrianh/xsamtools:v0.5.0"
+	    docker: "xbrianh/xsamtools:v0.5.1"
 		memory: "64G"
 		cpu: "8"
 		preemptible: "${preemptible}"
