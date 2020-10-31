@@ -1,18 +1,19 @@
 include common.mk
 
-test: lint cromwell.jar
-	java -jar cromwell.jar run vcf_merge.wdl --inputs test.json
+test: lint plugin
+	# "This does NOT test DRS resolved VCF workflows."
+	# "Please make sure `make test_drs` passes prior to release."
+	gsutil cp tests/fixtures/a.vcf.gz gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/test_merge_vcfs/a.vcf.gz
+	gsutil cp tests/fixtures/b.vcf.gz gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/test_merge_vcfs/b.vcf.gz
+	miniwdl run --verbose --copy-input-files vcf_merge.wdl --input tests/gs_input.json
+
+plugin:
+	pip install --upgrade --no-cache-dir tests/infra/inject_gs_credentials
 
 lint:
 	miniwdl check --strict vcf_merge.wdl
 
-womtool.jar:
-	wget -O womtool.jar https://github.com/broadinstitute/cromwell/releases/download/52/womtool-52.jar
-
-cromwell.jar:
-	wget -O cromwell.jar https://github.com/broadinstitute/cromwell/releases/download/52/cromwell-52.jar
-
 clean:
 	git clean -dfx
 
-.PHONY: test lint clean
+.PHONY: test_gs_input test_drs_input plugin lint clean
