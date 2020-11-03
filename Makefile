@@ -1,8 +1,10 @@
+include common.mk
+
 test: lint cromwell.jar
 	java -jar cromwell.jar run vcf_merge.wdl --inputs test.json
 
-lint: womtool.jar
-	java -jar womtool.jar validate vcf_merge.wdl
+lint:
+	miniwdl check --strict vcf_merge.wdl
 
 womtool.jar:
 	wget -O womtool.jar https://github.com/broadinstitute/cromwell/releases/download/52/womtool-52.jar
