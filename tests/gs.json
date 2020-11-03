@@ -1,0 +1,9 @@
+{
+  "workspace": "terra-notebook-utils-tests",
+  "billing_project": "firecloud-cgl",
+  "input_files": [
+    "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/test_merge_vcfs/a.vcf.gz",
+    "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/test_merge_vcfs/b.vcf.gz"
+  ],
+  "output_file": "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/test_merge_vcfs/out.vcf.gz"
+}
