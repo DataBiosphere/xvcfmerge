@@ -1,5 +1,3 @@
-include common.mk
-
 test: lint plugin
 	###############################################################
 	# "This does NOT test DRS resolved VCF workflows."            #
