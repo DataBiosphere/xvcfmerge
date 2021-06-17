@@ -16,7 +16,7 @@ plugin:
 	pip install --upgrade --no-cache-dir tests/infra/inject_gs_credentials
 
 lint:
-	miniwdl check --strict vcf_merge.wdl
+	miniwdl check vcf_merge.wdl
 
 clean:
 	git clean -dfx
