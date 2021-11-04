@@ -1,9 +1,9 @@
 {
-  "workspace": "terra-notebook-utils-tests",
-  "billing_project": "firecloud-cgl",
-  "input_files": [
+  "xVCFMergeWorkflow.workspace": "terra-notebook-utils-tests",
+  "xVCFMergeWorkflow.billing_project": "firecloud-cgl",
+  "xVCFMergeWorkflow.input_files": [
     "drs://dg.4503/697f611b-aa8a-4bd7-a80b-946276273833",
     "drs://dg.4503/ce212b62-e796-4b32-becb-361f272cead0"
   ],
-  "output_file": "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/my_combined.vcf.gz"
+  "xVCFMergeWorkflow.output_file": "gs://fc-9169fcd1-92ce-4d60-9d2d-d19fd326ff10/my_combined.vcf.gz"
 }
