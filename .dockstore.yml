@@ -1,0 +1,8 @@
+version: 1.2
+workflows:
+   - subclass: WDL
+     primaryDescriptorPath: /vcf_merge.wdl
+     testParameterFiles:
+         - /tests/gs.json
+         - /tests/drs.json
+     name: xvcfmerge
