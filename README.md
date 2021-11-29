@@ -7,7 +7,7 @@ URIs.
 
 ## Description
 
-[Samtools](https://samtools.github.io/) is used to perform the merge. Each input VCF should describe a single
+[xsamtools](https://github.com/DataBiosphere/xsamtools) is used to perform the merge. Each input VCF should describe a single
 chromosome and should have equivalent headers.
 
 In order to keep hard disk requirements small and improve performance, input/output objects are streamed directly from
