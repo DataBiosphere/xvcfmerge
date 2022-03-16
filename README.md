@@ -45,4 +45,4 @@ gcloud auth application-default login
 make test_drs
 ```
 
-Please contact Brian Hannafious for data and workspace access issues.
+Please contact Lon Blauvelt for data and workspace access issues.
