@@ -35,6 +35,7 @@ Terra workspace and GCP authorization.
 
 To run basic tests,
 ```
+docker login
 gcloud auth login
 make test
 ```
