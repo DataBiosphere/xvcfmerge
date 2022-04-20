@@ -48,17 +48,11 @@ workflow xVCFMergeWorkflow {
         String workspace
         Boolean? force_samples
         Boolean? print_header
-        Int? cpu
-        Int? memory
-        Int? preemptible
     }
     call xVCFMerge { input: input_files=input_files,
                             output_file=output_file,
                             billing_project=billing_project,
                             workspace=workspace,
                             force_samples = force_samples,
-                            print_header = print_header,
-                            cpu=cpu,
-                            memory=memory,
-                            preemptible=preemptible }
+                            print_header = print_header }
 }
