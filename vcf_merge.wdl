@@ -6,10 +6,10 @@ task xVCFMerge {
         String output_file
         String billing_project
         String workspace
-        Int? addl_disk_space = 1
-        Int? cpu = 8
-        Int? memory = 64
-        Int? preemptible = 0
+        Int addl_disk_space = 1
+        Int cpu = 8
+        Int memory = 64
+        Int preemptible = 0
     }
     Int input_size = ceil(size(input_files, "GB"))
     Int final_disk_size = input_size + addl_disk_space
@@ -33,9 +33,9 @@ workflow xVCFMergeWorkflow {
         String output_file
         String billing_project
         String workspace
-        Int? cpu = 8
-        Int? memory = 64
-        Int? preemptible = 0
+        Int? cpu
+        Int? memory
+        Int? preemptible
     }
     call xVCFMerge { input: input_files=input_files,
                             output_file=output_file,
