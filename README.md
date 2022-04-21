@@ -39,6 +39,7 @@ docker login
 gcloud auth login
 make test
 ```
+Note that the WDL built-in function size() does not function in miniwdl, which is used in the makefile, when working with gs URIs which may lead to a failing test unless lines involving that function are commented out. size() functions correctly on Cromwell and is a necessary inclusion for GCP-based backends including Terra.
 
 More robust tests against DRS resolved objects should be executed prior to release with
 ```
