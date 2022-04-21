@@ -5,4 +5,9 @@ workflows:
      testParameterFiles:
          - /tests/gs.json
          - /tests/drs.json
+     authors:
+      - name: Brian Hannafious
+      - name: Lon Blauvelt
+        email: lblauvel at ucsc dot edu
+        affiliation: UC Santa Cruz
      name: xvcfmerge
